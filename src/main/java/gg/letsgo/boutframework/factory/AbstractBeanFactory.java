@@ -13,7 +13,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         return beanDefinitionMap.get(name).getBean();
     }
 
-    public void registerBeanDefinition(String name, BeanDefinition beanDefinition) {
+    public void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws Exception {
         Object bean = createBean(beanDefinition);
         beanDefinition.setBean(bean);
         beanDefinitionMap.put(name, beanDefinition);

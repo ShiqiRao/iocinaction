@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean name="helloWorldService" class="us.codecraft.tinyioc.HelloWorldService">
+    <bean name="HelloWorld" class="gg.letsgo.boutframework.HelloWorld">
         <property name="text" value="Hello World!"></property>
     </bean>
 

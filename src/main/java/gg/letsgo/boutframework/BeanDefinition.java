@@ -4,7 +4,7 @@ public class BeanDefinition {
     private Object bean;
     private Class beanClass;
     private String beanClassName;
-    private Properties properties;
+    private Properties properties = new Properties();
 
     public BeanDefinition() {
     }
