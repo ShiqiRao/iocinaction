@@ -7,30 +7,21 @@ import java.util.Map;
 
 public class AutowiredCapableBeanFactory extends AbstractBeanFactory {
     @Override
-    protected Object createBean(BeanDefinition beanDefinition) {
+    protected Object createBean(BeanDefinition beanDefinition) throws Exception {
         Object bean = createBeanInstance(beanDefinition);
         applyProperties(bean, beanDefinition);
         return bean;
     }
 
-    private Object createBeanInstance(BeanDefinition beanDefinition) {
-        try {
-            return beanDefinition.getBeanClass().newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
+    protected Object createBeanInstance(BeanDefinition beanDefinition) throws Exception {
+        return beanDefinition.getBeanClass().newInstance();
     }
 
-    private void applyProperties(Object bean, BeanDefinition beanDefinition) {
+    protected void applyProperties(Object bean, BeanDefinition beanDefinition) throws Exception {
         for (Map.Entry entry : beanDefinition.getProperties().getPropertyMap().entrySet()) {
-            try {
-                Field field = bean.getClass().getDeclaredField((String) entry.getKey());
-                field.setAccessible(true);
-                field.set(bean, entry.getValue());
-            } catch (NoSuchFieldException | IllegalAccessException e) {
-                e.printStackTrace();
-            }
+            Field field = bean.getClass().getDeclaredField((String) entry.getKey());
+            field.setAccessible(true);
+            field.set(bean, entry.getValue());
         }
     }
 }

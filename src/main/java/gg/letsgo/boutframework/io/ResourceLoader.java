@@ -1,8 +1,10 @@
 package gg.letsgo.boutframework.io;
 
-public class ResourceLoader {
+import java.net.URL;
 
-    public Resource getResource(String location) {
-        return new URLResouce(this.getClass().getClassLoader().getResource(location));
+public class ResourceLoader {
+    public Resource getResource(String location){
+        URL url = this.getClass().getClassLoader().getResource(location);
+        return new URLResource(url);
     }
 }

@@ -3,5 +3,5 @@ package gg.letsgo.boutframework;
 import java.io.IOException;
 
 public interface BeanDefinitionReader {
-    BeanDefinition loadBeanDefinition(String location) throws IOException, Exception;
+    void loadBeanDefinition(String location) throws Exception;
 }

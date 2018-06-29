@@ -2,19 +2,20 @@ package gg.letsgo.boutframework;
 
 import gg.letsgo.boutframework.io.ResourceLoader;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class AbstractBeanDefinitionReader implements BeanDefinitionReader {
-    private Map<String, BeanDefinition> registry;
-    private ResourceLoader resourceLoader;
+    protected Map<String, Object> registry;
 
-    protected AbstractBeanDefinitionReader(ResourceLoader resourceLoader) {
-        registry = new ConcurrentHashMap<>();
+    protected ResourceLoader resourceLoader;
+
+    public AbstractBeanDefinitionReader(ResourceLoader resourceLoader) {
+        registry = new HashMap<>();
         this.resourceLoader = resourceLoader;
     }
 
-    public Map<String, BeanDefinition> getRegistry() {
+    public Map<String, Object> getRegistry() {
         return registry;
     }
 

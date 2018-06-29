@@ -11,6 +11,6 @@ public class Properties {
     }
 
     public Map<String, Object> getPropertyMap() {
-        return propertyMap;
+        return this.propertyMap;
     }
 }
