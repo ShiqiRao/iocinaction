@@ -1,6 +1,6 @@
-package gg.letsgo.boutframework.factory;
+package gg.letsgo.boutframework.beans.factory;
 
-import gg.letsgo.boutframework.BeanDefinition;
+import gg.letsgo.boutframework.beans.BeanDefinition;
 import gg.letsgo.boutframework.BeanReference;
 
 import java.lang.reflect.Field;

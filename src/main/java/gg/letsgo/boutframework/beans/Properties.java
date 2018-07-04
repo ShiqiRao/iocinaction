@@ -1,4 +1,4 @@
-package gg.letsgo.boutframework;
+package gg.letsgo.boutframework.beans;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

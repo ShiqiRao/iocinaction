@@ -1,4 +1,4 @@
-package gg.letsgo.boutframework;
+package gg.letsgo.boutframework.beans;
 
 public class BeanDefinition {
     private Object bean;

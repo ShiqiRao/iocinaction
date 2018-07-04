@@ -1,4 +1,4 @@
-package gg.letsgo.boutframework.io;
+package gg.letsgo.boutframework.beans.io;
 
 import java.net.URL;
 

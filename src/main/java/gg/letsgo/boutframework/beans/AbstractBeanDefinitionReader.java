@@ -1,12 +1,12 @@
-package gg.letsgo.boutframework;
+package gg.letsgo.boutframework.beans;
 
-import gg.letsgo.boutframework.io.ResourceLoader;
+import gg.letsgo.boutframework.beans.io.ResourceLoader;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public abstract class AbstractBeanDefinitionReader implements BeanDefinitionReader {
-    protected Map<String, Object> registry;
+    protected Map<String, BeanDefinition> registry;
 
     protected ResourceLoader resourceLoader;
 
@@ -15,7 +15,7 @@ public abstract class AbstractBeanDefinitionReader implements BeanDefinitionRead
         this.resourceLoader = resourceLoader;
     }
 
-    public Map<String, Object> getRegistry() {
+    public Map<String, BeanDefinition> getRegistry() {
         return registry;
     }
 

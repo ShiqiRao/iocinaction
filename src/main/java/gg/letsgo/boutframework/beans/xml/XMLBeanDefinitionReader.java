@@ -1,9 +1,9 @@
-package gg.letsgo.boutframework.xml;
+package gg.letsgo.boutframework.beans.xml;
 
-import gg.letsgo.boutframework.AbstractBeanDefinitionReader;
-import gg.letsgo.boutframework.BeanDefinition;
+import gg.letsgo.boutframework.beans.AbstractBeanDefinitionReader;
+import gg.letsgo.boutframework.beans.BeanDefinition;
 import gg.letsgo.boutframework.BeanReference;
-import gg.letsgo.boutframework.io.ResourceLoader;
+import gg.letsgo.boutframework.beans.io.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

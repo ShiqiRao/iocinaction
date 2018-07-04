@@ -1,14 +1,9 @@
-package gg.letsgo.boutframework.xml;
+package gg.letsgo.boutframework.beans.xml;
 
-import gg.letsgo.boutframework.AbstractBeanDefinitionReader;
-import gg.letsgo.boutframework.BeanDefinitionReader;
-import gg.letsgo.boutframework.io.ResourceLoader;
+import gg.letsgo.boutframework.beans.AbstractBeanDefinitionReader;
+import gg.letsgo.boutframework.beans.io.ResourceLoader;
 import org.junit.Assert;
 import org.junit.Test;
-
-import javax.xml.parsers.ParserConfigurationException;
-
-import static org.junit.Assert.*;
 
 public class XMLBeanDefinitionReaderTest {
 
