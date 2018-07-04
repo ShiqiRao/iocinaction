@@ -2,6 +2,7 @@ package gg.letsgo.boutframework.xml;
 
 import gg.letsgo.boutframework.AbstractBeanDefinitionReader;
 import gg.letsgo.boutframework.BeanDefinition;
+import gg.letsgo.boutframework.BeanReference;
 import gg.letsgo.boutframework.io.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -45,9 +46,9 @@ public class XMLBeanDefinitionReader extends AbstractBeanDefinitionReader {
         String name = element.getAttribute("name");
         String className = element.getAttribute("class");
         BeanDefinition beanDefinition = new BeanDefinition();
-        processProperty(element,beanDefinition);
+        processProperty(element, beanDefinition);
         beanDefinition.setBeanClassName(className);
-        getRegistry().put(name,beanDefinition);
+        getRegistry().put(name, beanDefinition);
     }
 
     private void processProperty(Element element, BeanDefinition beanDefinition) {
@@ -58,7 +59,14 @@ public class XMLBeanDefinitionReader extends AbstractBeanDefinitionReader {
                 Element propertyEle = (Element) node;
                 String name = propertyEle.getAttribute("name");
                 String value = propertyEle.getAttribute("value");
-                beanDefinition.getProperties().addProperty(name, value);
+                String ref = propertyEle.getAttribute("ref");
+                if (name.length() == 0) {
+                    throw new IllegalArgumentException("Missing argument 'name'.");
+                } else if (value.length() != 0 && ref.length() == 0) {
+                    beanDefinition.getProperties().addProperty(name, value);
+                } else if (value.length() == 0 && ref.length() != 0) {
+                    beanDefinition.getProperties().addProperty(name, new BeanReference(ref));
+                } else throw new IllegalArgumentException("'value' and 'ref' can't exist at same time.");
             }
         }
     }

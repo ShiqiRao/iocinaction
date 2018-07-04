@@ -1,4 +1,5 @@
 package gg.letsgo.boutframework;
 
-public class OutputService {
+public interface OutputService {
+    void output(String text);
 }
